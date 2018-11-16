@@ -33,9 +33,9 @@ fun main(){
                 //use your file here!
             }
         
-            override fun onError(exception: Exception) {
-                throw exception
-            }
+        override fun onError(exception: Exception) {
+            throw exception
+        }
     }
     
     val job = getResourceCallbacks("file.txt", 
