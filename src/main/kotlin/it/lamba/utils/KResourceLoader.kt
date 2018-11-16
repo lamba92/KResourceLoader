@@ -21,7 +21,7 @@ fun getResource(name: String,
                 file: File = createTempFile(),
                 classLoader: ClassLoader
 ) = classLoader.getResourceAsStream(name)!!.let {
-    file.apply { writeBytes(it.readAllBytes()) }
+    file.apply { writeBytes(it.readBytes()) }
 }
 
 /**
