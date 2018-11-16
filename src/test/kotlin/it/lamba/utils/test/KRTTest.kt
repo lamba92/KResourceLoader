@@ -15,19 +15,19 @@ class KRTTest : ResourceCallbacks {
 
     @Test
     fun testResource(){
-        val string = getResource("test.txt", classLoader = classLoader).readText()
+        val string = getResource("test.txt").readText()
         assertEquals( "Hello world!", string)
     }
 
     @Test
     fun testResourceAsync() = runBlocking {
-        val string = getResourceAsync("test.txt", classLoader = classLoader).await().readText()
+        val string = getResourceAsync("test.txt").await().readText()
         assertEquals("Hello world!", string)
     }
 
     @Test
     fun testResourceCallback() = runBlocking {
-        getResourceCallback("test.txt", classLoader = classLoader, callbacks = this@KRTTest).join()
+        getResourceCallback("test.txt", callbacks = this@KRTTest).join()
     }
 
     override fun onFileReady(resource: File) {

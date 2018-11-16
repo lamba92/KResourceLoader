@@ -1,6 +1,6 @@
 # KResourceLoader [![Build Status](https://travis-ci.org/lamba92/KResourceLoader.svg?branch=master)](https://travis-ci.org/lamba92/KResourceLoader) [![](https://jitpack.io/v/lamba92/kresourceloader.svg)](https://jitpack.io/#lamba92/kresourceloader)
 
-A convenient way to retrieve resources in a JVM project. Especially usefull when the project is launching from a jar with bundled resources.
+A convenient way to retrieve resources in a JVM project. Especially useful when the project is launching from a jar with bundled resources.
 
 Written in Kotlin with ❤️.
 
@@ -10,8 +10,7 @@ To retrieve a resource synchronously:
 
 ```
 fun main(){
-    val resource = getResource("file.txt", 
-            classloader = this::class.java.classloader)
+    val resource = getResource("file.txt")
 }
 ```
 
@@ -19,8 +18,7 @@ Asynchronously:
 
 ```
 fun main() = runBlocking {
-    val deferredResource = getResourceAsync("file.txt", 
-            classloader = this::class.java.classloader)
+    val deferredResource = getResourceAsync("file.txt")
     val resource = deferredResource.await()
 }
 ```
@@ -41,7 +39,6 @@ fun main(){
     }
     
     val job = getResourceCallbacks("file.txt", 
-            classloader = this::class.java.classloader,
             callbacks = callbacks)
 }
 ```

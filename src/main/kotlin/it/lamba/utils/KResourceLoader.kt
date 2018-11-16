@@ -19,7 +19,7 @@ import java.io.File
 @JvmOverloads
 fun getResource(name: String,
                 file: File = createTempFile(),
-                classLoader: ClassLoader
+                classLoader: ClassLoader = Thread.currentThread().contextClassLoader
 ) = classLoader.getResourceAsStream(name)!!.let {
     file.apply { writeBytes(it.readBytes()) }
 }
@@ -34,7 +34,7 @@ fun getResource(name: String,
 @JvmOverloads
 fun getResourceAsync(name: String,
                      file: File = createTempFile(),
-                     classLoader: ClassLoader
+                     classLoader: ClassLoader = Thread.currentThread().contextClassLoader
 ) = GlobalScope.async(IO) { getResource(name, file, classLoader) }
 
 /**
@@ -49,7 +49,7 @@ fun getResourceAsync(name: String,
 fun getResourceCallback(
     name: String,
     file: File = createTempFile(),
-    classLoader: ClassLoader,
+    classLoader: ClassLoader = Thread.currentThread().contextClassLoader,
     callbacks: ResourceCallbacks
 ) = GlobalScope.launch(IO) {
     try {
