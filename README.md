@@ -1,4 +1,4 @@
-# KResourceLoader [![Build Status](https://travis-ci.org/lamba92/kresourceloader.svg?branch=master)](https://travis-ci.org/lamba92/kresourceloader) [![](https://jitpack.io/v/lamba92/kresourceloader.svg)](https://jitpack.io/#lamba92/kresourceloader)
+# KResourceLoader [![Build Status](https://travis-ci.org/lamba92/KResourceLoader.svg?branch=master)](https://travis-ci.org/lamba92/KResourceLoader) [![](https://jitpack.io/v/lamba92/kresourceloader.svg)](https://jitpack.io/#lamba92/kresourceloader)
 
 A convenient way to retrieve resources in a JVM project. 
 
