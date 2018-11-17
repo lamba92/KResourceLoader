@@ -69,4 +69,19 @@ repositories {
 dependencies {
     implementation("com.github.lamba92", "kresourceloader", "{latest_version}")
 }
-
+```
+For Maven:
+```
+<repositories>
+   <repository>
+		<id>jitpack.io</id>
+		<url>https://jitpack.io</url>
+   </repository>
+</repositories>
+...
+<dependency> 	 
+   <groupId>com.github.Lamba92</groupId>
+   <artifactId>kresourceloader</artifactId>
+   <version>Tag</version>
+</dependency>
+```
